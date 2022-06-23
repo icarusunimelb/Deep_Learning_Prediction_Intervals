@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 import matplotlib.pyplot as plt
-import tensorflow as tf
+import tensorflow.compat.v1 as tf
+tf.disable_v2_behavior()
 import numpy as np
 import datetime
 import math
@@ -417,11 +418,11 @@ class TfNetwork:
 				# self.print_params(sess, in_sess = True)
 				# if math.isnan(loss_val):
 				if False:
-					 nan_mean = sess.run(self.y_mean, 
+					nan_mean = sess.run(self.y_mean, 
 						feed_dict={self.X: X_val, self.y_true: y_val})
-					 nan_var = sess.run(self.y_var, 
+					nan_var = sess.run(self.y_var, 
 						feed_dict={self.X: X_val, self.y_true: y_val})
-					 nan_y_L = sess.run(self.y_L, 
+					nan_y_L = sess.run(self.y_L, 
 						feed_dict={self.X: X_val, self.y_true: y_val})
 
 					 # print('nan_mean', nan_mean)
